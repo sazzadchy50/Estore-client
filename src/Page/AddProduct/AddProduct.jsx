@@ -1,24 +1,33 @@
+import { useState } from "react";
+
+
 const AddProduct = () => {
 
-    const handleAdd = (e) => {
-      e.preventDefault()
-      const form = e.target;
+    const [selectedType, setSelectedType] = useState('');
+
+  const handleTypeChange = (e) => {
+    setSelectedType(e.target.value); 
+  };
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+    const form = e.target;
     const image = form.image.value;
     const name = form.name.value;
     const brandName = form.brandName.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const shortDescription = form.shortDescription.value;
-    // const type = form.type.value;
-    
-    console.log(image, name, brandName, price, rating, shortDescription);
-    }
+    const type = selectedType;
+
+    console.log(image, name, brandName, price, rating, shortDescription, type);
+  };
+
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
+      <div className="hero-content flex-col">
+        <div className="text-center">
           <h1 className="text-5xl font-bold">Add Products</h1>
-          
         </div>
         <div className="card flex-shrink-0   shadow-2xl bg-base-100 w-[70vh]">
           <form onSubmit={handleAdd} className="card-body ">
@@ -77,19 +86,33 @@ const AddProduct = () => {
               </div>
             </div>
             {/*Short description and  rating */}
-            <div className="flex gap-5">
-              <div className="form-control w-1/2">
-                <label className="label">
-                  <span className="label-text">Short description</span>
-                </label>
-                <input
-                  name="shortDescription"
-                  type="text"
-                  placeholder="Short Description"
-                  className="input input-bordered"
-                  required
-                />
-              </div>
+            <div className="flex gap-5 w-full">
+             
+            <div className="form-control w-1/2 max-w-xs">
+              <label className="label">
+                <span className="label-text">
+                 Type
+                </span>
+                
+              </label>
+              <select className="select select-bordered 
+              " 
+            //   value ={selectedType}
+                onChange={handleTypeChange}
+
+              >
+                <option disabled selected>
+                category 
+                </option>
+                <option>Phone</option>
+                <option>Laptop</option>
+                <option>Watch</option>
+                
+               
+              </select>
+              
+            </div>
+
               <div className="form-control w-1/2">
                 <label className="label">
                   <span className="label-text">Rating</span>
@@ -103,27 +126,28 @@ const AddProduct = () => {
                 />
               </div>
             </div>
-            <div className="w-full">
-              <div className="dropdown ">
-                <label tabIndex={0} className="btn ">
-                  Type
+            
+            <div className="form-control w-full max-w-xs">
+          
+            <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Short description</span>
                 </label>
-                <ul
-                  tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <a>Phone</a>
-                  </li>
-                  <li>
-                    <a>Laptop</a>
-                  </li>
-                </ul>
+                <input
+                  name="shortDescription"
+                  type="text"
+                  placeholder="Short Description"
+                  className="input input-bordered"
+                  required
+                />
               </div>
+              
             </div>
-
+          
             <div className="form-control mt-6">
-              <button className="btn bg-purple-500 text-white ">Add Product</button>
+              <button className="btn bg-purple-500 text-white ">
+                Add Product
+              </button>
             </div>
           </form>
         </div>
@@ -131,7 +155,5 @@ const AddProduct = () => {
     </div>
   );
 };
-
-
 
 export default AddProduct;

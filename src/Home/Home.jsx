@@ -12,6 +12,7 @@ const brands = useLoaderData()
             {
             brands.map(brands => <Brand key={brands.id} brands={brands}></Brand>)
             }
+            
         </div>
     <Footer></Footer>
     
