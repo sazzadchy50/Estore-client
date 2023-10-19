@@ -19,8 +19,22 @@ const AddProduct = () => {
     const rating = form.rating.value;
     const shortDescription = form.shortDescription.value;
     const type = selectedType;
-
+    const newBrands = {image, name, brandName, price, rating, shortDescription, type}
     console.log(image, name, brandName, price, rating, shortDescription, type);
+
+    //send data to the server 
+    fetch('http://localhost:5000/brand', {
+        method: 'POST',
+        
+        headers:{
+           'content-type' : 'application/json' 
+        },
+        body: JSON.stringify(newBrands)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if() 
+    })
   };
 
   return (
