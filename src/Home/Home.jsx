@@ -1,5 +1,14 @@
+import Banner from "../Components/Banner/Banner";
+import Footer from "../Page/Footer/Footer";
+
 const Home = () => {
-  return <div className="text-2xl">home</div>;
+
+  return <>
+    <Banner></Banner>
+    <Footer></Footer>
+  
+  
+  </>;
 };
 
 export default Home;
