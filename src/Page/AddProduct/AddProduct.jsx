@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
+import Swal from 'sweetalert2'
 
 
 const AddProduct = () => {
-
-    const [selectedType, setSelectedType] = useState('');
+  const [selectedType, setSelectedType] = useState("");
 
   const handleTypeChange = (e) => {
-    setSelectedType(e.target.value); 
+    setSelectedType(e.target.value);
   };
 
   const handleAdd = (e) => {
@@ -18,23 +19,40 @@ const AddProduct = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const shortDescription = form.shortDescription.value;
+    const details = form.details.value;
     const type = selectedType;
-    const newBrands = {image, name, brandName, price, rating, shortDescription, type}
+    const newBrands = {
+      image,
+      name,
+      brandName,
+      price,
+      rating,
+      shortDescription,
+      type,
+      details
+    };
     console.log(image, name, brandName, price, rating, shortDescription, type);
 
-    //send data to the server 
-    fetch('http://localhost:5000/brand', {
-        method: 'POST',
-        
-        headers:{
-           'content-type' : 'application/json' 
-        },
-        body: JSON.stringify(newBrands)
+    //send data to the server
+    fetch("http://localhost:5000/brand", {
+      method: "POST",
+
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newBrands),
     })
-    .then(res => res.json())
-    .then(data => {
-        if() 
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+            Swal.fire({
+                title: 'Success',
+                text: 'Product added successfully',
+                icon: 'success',
+                confirmButtonText: 'ok'
+              })
+        }
+      });
   };
 
   return (
@@ -99,33 +117,26 @@ const AddProduct = () => {
                 />
               </div>
             </div>
-            {/*Short description and  rating */}
+            {/*type and  rating */}
             <div className="flex gap-5 w-full">
-             
-            <div className="form-control w-1/2 max-w-xs">
-              <label className="label">
-                <span className="label-text">
-                 Type
-                </span>
-                
-              </label>
-              <select className="select select-bordered 
-              " 
-            //   value ={selectedType}
-                onChange={handleTypeChange}
-
-              >
-                <option disabled selected>
-                category 
-                </option>
-                <option>Phone</option>
-                <option>Laptop</option>
-                <option>Watch</option>
-                
-               
-              </select>
-              
-            </div>
+              <div className="form-control w-1/2 max-w-xs">
+                <label className="label">
+                  <span className="label-text">Type</span>
+                </label>
+                <select
+                  className="select select-bordered 
+              "
+                  //   value ={selectedType}
+                  onChange={handleTypeChange}
+                >
+                  <option disabled selected>
+                    category
+                  </option>
+                  <option>Phone</option>
+                  <option>Laptop</option>
+                  <option>Watch</option>
+                </select>
+              </div>
 
               <div className="form-control w-1/2">
                 <label className="label">
@@ -140,10 +151,9 @@ const AddProduct = () => {
                 />
               </div>
             </div>
-            
+        {/* short description */}
             <div className="form-control w-full max-w-xs">
-          
-            <div className="form-control">
+              <div className="form-control">
                 <label className="label">
                   <span className="label-text">Short description</span>
                 </label>
@@ -155,15 +165,28 @@ const AddProduct = () => {
                   required
                 />
               </div>
-              
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text"> details</span>
+                </label>
+                <input
+                  name="details"
+                  type="text"
+                  placeholder="details"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
             </div>
-          
+
             <div className="form-control mt-6">
               <button className="btn bg-purple-500 text-white ">
                 Add Product
               </button>
             </div>
+        
           </form>
+        <Toaster/>  
         </div>
       </div>
     </div>
