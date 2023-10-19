@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "brand": "Apple",
+      "image": "https://i.ibb.co/KmzzH97/apple-logo-4k-uzxvz854vxuglpqy.jpg"
+    },
+    {
+      "id": 2,
+      "brand": "Rolex",
+      "image": "https://i.ibb.co/5MgvW8q/2018-Rolex-Logo.jpg"
+    },
+    {
+      "id": 3,
+      "brand": "Samsung",
+      "image": "https://i.ibb.co/TP8Z4qr/samsung-logo-on-transparent-background-free-vector.jpg"
+    },
+    {
+      "id": 4,
+      "brand": "Vivo",
+      "image": "https://i.ibb.co/KVpnFHH/1200px-Vivo-logo-2019-svg.png"
+    },
+    {
+      "id": 5,
+      "brand": "Asus",
+      "image": "https://i.ibb.co/yFf23PX/1200px-Asus-Tek-black-logo.png"
+    },
+    {
+      "id": 6,
+      "brand": "Oppo",
+      "image": "https://i.ibb.co/55GxkMP/2560px-OPPO-LOGO-2019-svg.png"
+    }
+  ]
+  
