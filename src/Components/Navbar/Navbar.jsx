@@ -39,18 +39,20 @@ const Navbar = () => {
     const userDemoImg = 
     <img className="rounded-full " src="https://i.ibb.co/D4qj0Xt/user.png" />
     const userImg =  <img className="rounded-full " src={user?.photoURL} />
-   console.log(user?.photoURL);
-    
+ 
+
   return (
     <div>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <h1 className="text-2xl font-bold ">
-            <span className="mr-5">
-              <span className="text-3xl italic text-purple-500 ">E</span>
-              store
-            </span>
-          </h1>
+          <Link to="/">
+            <h1 className="text-2xl font-bold ">
+              <span className="mr-5">
+                <span className="text-3xl italic text-purple-500 ">E</span>
+                store
+              </span>
+            </h1>
+          </Link>
         </div>
         <div className="flex-none">
           <div className="dropdown dropdown-end">

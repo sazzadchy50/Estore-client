@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../Components/Banner/Banner";
 import Footer from "../Page/Footer/Footer";
 import Brand from "../Components/Brand/Brand";
+import UserRating from "../Page/UserRating/UserRating";
 
 const Home = () => {
 const brands = useLoaderData()
@@ -14,6 +15,7 @@ const brands = useLoaderData()
             }
             
         </div>
+        <UserRating></UserRating>
     <Footer></Footer>
     
   
