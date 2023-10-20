@@ -42,11 +42,9 @@ const Register = () => {
   };
   const handleGoogleLogin = () => {
     signInWithGoogle();
-    toast.success('user login successful');
+   
   };
-  // const handleGitHubLogin = () =>{
-  //   return signInWithGithub()
-  // }
+ 
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col ">

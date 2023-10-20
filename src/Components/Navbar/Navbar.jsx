@@ -1,16 +1,45 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink, Navigate } from "react-router-dom";
+import { AuthContext } from "../../FirebaseAuth/AuthProvider";
 
 const Navbar = () => {
+  const {user, logout} = useContext(AuthContext)
+  const handleLogOut = () => {
+    logout();
+    
+    Navigate('/login')
+  };
     const navlink =(
         <>
             <ul>
-                <li><NavLink to="/">Home</NavLink></li>
+                <li className="mt-5"><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/addProduct">Add Product</NavLink></li>
-                <li><NavLink to="/login">Login</NavLink></li>
+
+                <div className="divider"/>
+                <h2 className="ml-4 text-xl">{user?.displayName}</h2>
+
+                <li><NavLink to="/login">
+                {!user ? (
+               <Link to="/login" className="">
+                 <button className="btn w-full btn-sm">Login</button>
+               </Link>
+             ) : (
+               <button onClick={handleLogOut} className="btn w-full btn-sm text-center">
+                 LogOut
+               </button>
+             )}
+          
+                  
+                  </NavLink></li>
+                  
             </ul>
         </>
     )
 
+    const userDemoImg = 
+    <img className="rounded-full " src="https://i.ibb.co/D4qj0Xt/user.png" />
+    const userImg =  <img className="rounded-full " src={user?.photoURL} />
+   console.log(user?.photoURL);
     
   return (
     <div>
@@ -62,7 +91,12 @@ const Navbar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                {/* <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
+                {
+                    
+                    user?.photoURL ? userImg : userDemoImg                   
+         
+                  }
               </div>
             </label>
             <ul
