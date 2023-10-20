@@ -126,6 +126,7 @@ const AddProduct = () => {
                 <select
                   className="select select-bordered 
               "
+
                   //   value ={selectedType}
                   onChange={handleTypeChange}
                 >
@@ -137,6 +138,7 @@ const AddProduct = () => {
                   <option>Watch</option>
                 </select>
               </div>
+
 
               <div className="form-control w-1/2">
                 <label className="label">
@@ -176,6 +178,7 @@ const AddProduct = () => {
                   className="input input-bordered"
                   required
                 />
+                
               </div>
             </div>
 

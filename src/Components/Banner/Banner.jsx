@@ -1,5 +1,6 @@
 const Banner = () => {
   return (
+    
     <div
       className="hero h-[60vh] bg-cover bg-no-repeat"
       style={{
