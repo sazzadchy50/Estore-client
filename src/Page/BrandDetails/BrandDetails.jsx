@@ -4,33 +4,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import axios from "axios";
+// import axios from "axios";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import BrandDetailsCard from "./BrandDetailsCard";
+import NotAvailable from "./NotAvailable";
+
 
 const BrandDetails = () => {
-    const { name } = useParams();
-  const [brandData, setBrandData] = useState(null);
+  const brandData = useLoaderData();
+  console.log(brandData);
 
-  useEffect(() => {
-   
-    axios.get(`/brands/${name}`)
-    .then((response) => {
-      setBrandData(response.data);
-
-    })
-    .catch((error) => {
-        console.error("Error fetching brand data:", error);
-      })
-  }, [name]);
-
-  
   return (
     <div>
-        {/* advertising slider */}
+      {/* advertising slider */}
       <div>
         <Swiper
           spaceBetween={30}
@@ -67,21 +56,19 @@ const BrandDetails = () => {
               alt=""
             />
           </SwiperSlide>
-          
         </Swiper>
       </div>
-      <div>
-      {brandData ? (
-        <div>
-          <h2>{name} Details</h2>
-          {/* Display brand-specific data here */}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
-      </div>
+      {/* card data */}
+    <div className="grid lg:grid-cols-3 gap-5  container mx-auto mt-32 p-5">
+       
+        {
+          brandData.length !== 0 ? brandData.map((item) => <BrandDetailsCard item={item} key={item.id}></BrandDetailsCard> ) :
+          <NotAvailable></NotAvailable>
+        }
     </div>
-  );
+
+    </div>
+  )
 };
 
 export default BrandDetails;

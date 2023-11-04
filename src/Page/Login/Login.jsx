@@ -26,7 +26,7 @@ const Login = () => {
         .then((result) => {
           console.log(result.user);
           toast.success('user login successful');
-          setTimeout(() =>navigate(location?.state ? location.state : "/"), 2000);
+          setTimeout(() =>navigate(location?.pathname ? location.pathname : "/"), 2000);
           
           
         })
@@ -38,6 +38,8 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     signInWithGoogle();
+
+   
   };
   // const handleGithubLogin =()=>{
   //   signInWithGithub()
@@ -98,6 +100,7 @@ const Login = () => {
           </p>
         </div>
         <div>
+          
           <Toaster></Toaster>
        
         </div>

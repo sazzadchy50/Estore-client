@@ -4,16 +4,16 @@ const Brand = ({ brands }) => {
 
   const { id, image, brand } = brands;
 
-  const handleCard = () =>{
+//   const handleCard = () =>{
 
-console.log(brand);
+// console.log(brand);
 
-  }
+//   }
   return (
     <div>
       <Link to={`/brandDetails/${brand}`} key={id}>
         
-          <div onClick={() =>handleCard()} className="card bg-base-100 shadow-xl h-full">
+          <div className="card bg-base-100 shadow-xl h-full">
             <figure className="px-10 pt-10">
               <img
                 src={image}

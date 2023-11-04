@@ -2,16 +2,16 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const navlink =(
-    <>
-        <ul>
+//   const navlink =(
+//     <>
+//         <ul>
             
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="addProduct">Add product</Link></li>
-            <li><Link to="">Home</Link></li>
-        </ul>
-    </>
-)
+//             <li><Link to="/">Home</Link></li>
+//             <li><Link to="addProduct">Add product</Link></li>
+//             <li><Link to="">Home</Link></li>
+//         </ul>
+//     </>
+// )
   return (
     <footer className="mt-32 footer footer-center p-10 text-base-content  lg:bg-gray-800 lg:text-white shadow-2xl">
       <nav className="grid grid-flow-col gap-4">

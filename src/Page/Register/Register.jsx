@@ -42,7 +42,7 @@ const Register = () => {
   };
   const handleGoogleLogin = () => {
     signInWithGoogle();
-   
+    
   };
  
   return (

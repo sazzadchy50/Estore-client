@@ -21,7 +21,7 @@ const UserRating = () => {
         <div className="card   bg-base-100 shadow-xl">
           <figure>
             <img className="rounded-full w-1/3"
-              src="https://i.ibb.co/R787y1M/Max-R-Headshot-1.jpg"
+              src="https://i.ibb.co/r2B3zDP/l-UVJn-Wd4-Xo-N5-QUZWz-K-Qi-Cd-RNd-EOuzf-NXZg-g-Yu-DOc-Ufjy9dcafq-Sl0l-RU6p-Yu-Anov-Lx9-X4fy-ZI-s900.jpg"
               alt="Shoes"
             />
           </figure>
@@ -36,7 +36,7 @@ const UserRating = () => {
         <div className="card   bg-base-100 shadow-xl">
           <figure>
             <img className="rounded-full w-1/3"
-              src="https://i.ibb.co/R787y1M/Max-R-Headshot-1.jpg"
+              src="https://i.ibb.co/nsrtL9j/Real-Men-To-Take-Beard-Inspo-From1200-5e820fa725486.jpg"
               alt="Shoes"
             />
           </figure>
@@ -44,14 +44,14 @@ const UserRating = () => {
             <div className="text-center">
               <h2 className="text-2xl font-bold text-center">Shophia</h2>
             </div>
-            <p>Amazing experience shopping here. Purchased a laptop, and it s working flawlessly. Great job!</p>
+            <p>Amazing experience shopping here. Purchased a laptop, and it ds working flawlessly. Great job!</p>
            
           </div>
         </div>
         <div className="card   bg-base-100 shadow-xl">
           <figure>
             <img className="rounded-full w-1/3"
-              src="https://i.ibb.co/R787y1M/Max-R-Headshot-1.jpg"
+              src="https://i.ibb.co/NLVpH5p/handsome-unshaven-man-smiling-at-camera-and-expressing-positivity-photo.jpg"
               alt="Shoes"
             />
           </figure>

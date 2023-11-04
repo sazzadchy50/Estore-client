@@ -6,6 +6,7 @@ import { AuthContext } from "../../FirebaseAuth/AuthProvider";
 const PrivateRoute = ({ children }) => {
   const { user, loader } = useContext(AuthContext);
   const location = useLocation();
+  console.log(location);
   if (loader) {
     return;
   }
@@ -13,7 +14,7 @@ const PrivateRoute = ({ children }) => {
     return children;
   }
   console.log(location);
-  return <Navigate state={location?.state} to="/login"></Navigate>;
+  return <Navigate state={location?.pathname} to="/login"></Navigate>;
 };
 
 export default PrivateRoute;
