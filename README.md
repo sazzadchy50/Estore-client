@@ -1,6 +1,6 @@
 website name: Estore
 
-live link:
+live link:https://estore-53f97.web.app/
 
 features and functionalities
 
